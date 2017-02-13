@@ -20,7 +20,6 @@ void ofApp::update(){
 
 	if (position.y <= 0) {
 
-		//position.y = ofGetWindowHeight() - 1 - rectHeight;
 		initialVel.y = initialVel.y * -1 * friction;
 		initialVel.x *= friction;
 		ofResetElapsedTimeCounter();
