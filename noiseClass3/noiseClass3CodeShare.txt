@@ -1,0 +1,219 @@
+///////////////////////ofApp.h
+
+
+#pragma once
+
+#include "ofMain.h"
+#include "NoiseCluster.hpp"
+
+class ofApp : public ofBaseApp{
+
+	public:
+		void setup();
+		void update();
+		void draw();
+
+		void keyPressed(int key);
+		void keyReleased(int key);
+		void mouseMoved(int x, int y );
+		void mouseDragged(int x, int y, int button);
+		void mousePressed(int x, int y, int button);
+		void mouseReleased(int x, int y, int button);
+		void mouseEntered(int x, int y);
+		void mouseExited(int x, int y);
+		void windowResized(int w, int h);
+		void dragEvent(ofDragInfo dragInfo);
+		void gotMessage(ofMessage msg);
+    
+    vector<NoiseCluster> set;
+};
+
+
+
+
+
+/////////////////////////ofApp.cpp
+
+
+
+#include "ofApp.h"
+
+//--------------------------------------------------------------
+void ofApp::setup(){
+    ofSetBackgroundColor(0);
+}
+
+//--------------------------------------------------------------
+void ofApp::update(){
+    for (int i = 0; i < set.size(); i++){
+        set[i].update();
+    }
+}
+
+//--------------------------------------------------------------
+void ofApp::draw(){
+    ofSetBackgroundAuto(false);
+    for( int i = 0; i < set.size(); i++){
+        set[i].draw();
+    }
+    
+    cout<<set.size()<<endl;
+}
+
+//--------------------------------------------------------------
+void ofApp::keyPressed(int key){
+
+}
+
+//--------------------------------------------------------------
+void ofApp::keyReleased(int key){
+
+}
+
+//--------------------------------------------------------------
+void ofApp::mouseMoved(int x, int y ){
+
+}
+
+//--------------------------------------------------------------
+void ofApp::mouseDragged(int x, int y, int button){
+
+}
+
+//--------------------------------------------------------------
+void ofApp::mousePressed(int x, int y, int button){
+    set.push_back(NoiseCluster());
+    set[set.size()-1].center = ofVec2f(x,y);
+}
+
+//--------------------------------------------------------------
+void ofApp::mouseReleased(int x, int y, int button){
+
+}
+
+//--------------------------------------------------------------
+void ofApp::mouseEntered(int x, int y){
+
+}
+
+//--------------------------------------------------------------
+void ofApp::mouseExited(int x, int y){
+
+}
+
+//--------------------------------------------------------------
+void ofApp::windowResized(int w, int h){
+
+}
+
+//--------------------------------------------------------------
+void ofApp::gotMessage(ofMessage msg){
+
+}
+
+//--------------------------------------------------------------
+void ofApp::dragEvent(ofDragInfo dragInfo){ 
+
+}
+
+
+
+
+
+////////////////////////////////NoiseCluster.hpp
+
+
+
+
+//
+//  NoiseCluster.hpp
+//  Week04_RotationNoise
+//
+//  Created by Miri Park on 2/13/17.
+//
+//
+
+//
+//  NoiseCluster.hpp
+//  Week04_RotationNoise
+//
+//  Created by Miri Park on 2/13/17.
+//
+//
+
+#pragma once
+#include "ofMain.h"
+
+class NoiseCluster {
+public:
+    NoiseCluster();
+    void orbit(ofVec2f center);
+    float noiseColor (float xOff);
+    void draw();
+    void update();
+    
+    float speed, radius, orbitRadius;
+    float x, y, theta;
+    ofVec2f position;
+    ofVec2f center;
+    float xOff, start, inc;
+    
+};
+
+
+
+//////////////////////////////////////NoiseCluster.cpp
+
+
+
+//
+//  NoiseCluster.cpp
+//  Week04_RotationNoise
+//
+//  Created by Miri Park on 2/13/17.
+//
+//
+
+//
+//  NoiseCluster.cpp
+//  Week04_RotationNoise
+//
+//  Created by Miri Park on 2/13/17.
+//
+//
+
+#include "NoiseCluster.hpp"
+
+NoiseCluster::NoiseCluster(){
+    inc = 0.01;
+    radius = 2;
+    theta = 0;
+
+}
+
+void NoiseCluster::orbit(ofVec2f center){
+    x = sin(theta) * orbitRadius + ofMap(ofNoise(theta), 0, 1, 0 , orbitRadius);
+    y = cos(theta) * orbitRadius + ofMap(ofNoise(theta +100), 0, 1, 0, orbitRadius);
+    
+    position.set(center.x + x, center.y + y);
+
+}
+
+float NoiseCluster::noiseColor(float xOff){
+    return ofMap(ofNoise(xOff),0,1,0,255);
+}
+
+void NoiseCluster::update(){
+    theta += inc;
+}
+
+void NoiseCluster::draw(){
+    orbitRadius = ofMap(ofNoise(theta), 0,1, 0, 300);
+    
+    orbit( ofVec2f(center.x - orbitRadius/2, center.y - orbitRadius/2));
+    
+    ofSetColor(noiseColor(theta), noiseColor(theta + 10), noiseColor(theta + 100));
+    
+    ofDrawCircle(position,radius);
+
+}
