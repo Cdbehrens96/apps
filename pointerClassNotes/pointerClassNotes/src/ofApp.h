@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
-#include "frog.h"
+#include "bunny.h"
 
 class ofApp : public ofBaseApp{
 
@@ -21,24 +21,12 @@ class ofApp : public ofBaseApp{
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
-		void flyGet();
+
+		int a;
+		int * b;
+
+		bunny * myBunny;
+
+		bunny * monsterBunny;
 		
-		ofImage frog;
-		ofImage fly;
-		ofImage door;
-
-		float speed = 3.0;
-
-		float frogPosX = 50;
-		float frogPosY = 200;
-
-		float left = 0;
-		float right = 0;
-		float up = 0;
-		float down = 0;
-
-		bool flyHere = true;
-		bool gotFly = false;
-
-		ofSoundPlayer collect;
 };

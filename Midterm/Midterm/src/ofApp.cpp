@@ -2,32 +2,27 @@
 
 //--------------------------------------------------------------
 void ofApp::setup() {
-	for (int i = 0; i < MAX_SIZE; i++) {
-		myFloats.push_back(ofRandom(100));
-	}
-
-	gravity = ofVec2f(0.f, .1f);
-
+	ofBackground(0);
+	myFlash.setup();
+	video.loadMovie("Cosa fa un Cavallo ad Halloween.mp4");
+	video.play();
 }
 
 //--------------------------------------------------------------
 void ofApp::update() {
-	for (int i = 0; i < mySystems.size(); i++) {
-		mySystems[i].update(gravity);
-	}
-
+	video.update();
+	myFlash.update();
 }
 
 //--------------------------------------------------------------
 void ofApp::draw() {
-	for (int i = 0; i < mySystems.size(); i++) {
-		mySystems[i].draw();
-	}
+	video.draw(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
+	myFlash.draw();
 }
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key) {
-
+	myFlash._keyPressed(key);
 }
 
 //--------------------------------------------------------------
@@ -47,8 +42,7 @@ void ofApp::mouseDragged(int x, int y, int button) {
 
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button) {
-	particleSystem myParticleSystem(ofVec2f(x, y));
-	mySystems.push_back(myParticleSystem);
+	
 }
 
 //--------------------------------------------------------------

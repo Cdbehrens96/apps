@@ -1,4 +1,4 @@
-#include "particleSystem.h"
+/* #include "particleSystem.h"
 
 particleSystem::particleSystem(ofVec2f pos) {
 	myPos = pos;
@@ -24,4 +24,4 @@ void particleSystem::draw() {
 	for (int i = 0; i < myParticles.size(); i++) {
 		myParticles[i].draw();
 	}
-}
+} */

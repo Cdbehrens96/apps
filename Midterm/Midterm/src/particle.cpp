@@ -1,4 +1,4 @@
-#include "particle.h"
+/* #include "particle.h"
 
 particle::particle(ofVec2f pos) {
 
@@ -48,4 +48,4 @@ void particle::draw() {
 
 void particle::applyForce(ofVec2f force) {
 	myAccel = force;
-}
+} */

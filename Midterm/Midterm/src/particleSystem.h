@@ -1,4 +1,4 @@
-#pragma once
+/*#pragma once
 #include "ofMain.h"
 #include "particle.h"
 
@@ -14,4 +14,4 @@ public:
 	const int MAX_SIZE = 100;
 	ofVec2f myPos;
 
-};
+};*/

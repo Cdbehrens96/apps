@@ -7,13 +7,7 @@
     <ClCompile Include="src\main.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\particle.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\particleSystem.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\whiteFlash.cpp">
+    <ClCompile Include="src\bunny.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
@@ -22,20 +16,14 @@
       <UniqueIdentifier>{d8376475-7454-4a24-b08a-aac121d3ad6f}</UniqueIdentifier>
     </Filter>
     <Filter Include="addons">
-      <UniqueIdentifier>{89bf8c9a-607d-4c23-ab14-d232ddeb6907}</UniqueIdentifier>
+      <UniqueIdentifier>{1e1991d1-2177-4018-8754-911a1fe9e57d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ofApp.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="src\particle.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\particleSystem.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\whiteFlash.h">
+    <ClInclude Include="src\bunny.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>

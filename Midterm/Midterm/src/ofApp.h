@@ -1,7 +1,8 @@
 #pragma once
 
+ //#define OF_VIDEO_PLAYER_QUICKTIME
 #include "ofMain.h"
-#include "particleSystem.h"
+#include "whiteFlash.h"
 
 class ofApp : public ofBaseApp {
 
@@ -22,18 +23,16 @@ public:
 	void dragEvent(ofDragInfo dragInfo);
 	void gotMessage(ofMessage msg);
 
+	bool _hit = false;
+
 	vector<float> myFloats;
 
 	const int MAX_SIZE = 100;
 
-	vector<particleSystem> mySystems;
-
 	ofVec2f gravity;
 
-	//vector<particle> myParticles;
+	whiteFlash myFlash;
 
-	/*qualities:
-	forces: velocity, accelerato
+	ofVideoPlayer video;
 
-	*/
 };

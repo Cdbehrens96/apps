@@ -2,103 +2,46 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-	ofBackground(69, 69, 69);
-	frog.load("dwayne.png");
-	fly.load("fly.png");
-	door.load("door.png");
-	collect.load("collect.wav");
+	a = 3;
+	b = &a;
+	b += 1;
+
+	cout << "a: " << a << endl;
+	cout << "&a: " << &a << endl;
+	cout << "*&a: " << *&a << endl;
+
+	*b = 9;
+
+	cout << "b: " << *b << endl;
+
+	myBunny = new bunny(ofVec2f(100, 100), 4, 3);
+
+	monsterBunny = new bunny(ofVec2f(500, 500), 10, 2);
+
+	myBunny->numOfEars = 2;
+	myBunny->pos = ofVec2f(100, 100);
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-	
+	myBunny->move();
+	monsterBunny->move();
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-
-	if (gotFly == true) {
-		door.draw(ofGetWindowWidth() / 2, 550, 50, 50);
-	}
-
-	std::cout << "value: " << frogPosX << endl;
-
-	if (frogPosX < 557) {
-		frogPosX += right * speed;
-	}
-
-	if (frogPosX > -8) {
-		frogPosX += -left * speed;
-	}
-
-	if (frogPosY < 556) {
-		frogPosY += down * speed;
-	}
-
-	if (frogPosY > -8) {
-		frogPosY += -up * speed;
-	}
-
-	frog.draw(frogPosX, frogPosY, 50, 50);
-	if (flyHere) {
-		fly.draw(500, 200, 50, 50);
-	}
-	if(!gotFly){
-		if ((frogPosX > 480) && (frogPosX < 520) && (frogPosY > 190) && (frogPosY < 210)) {
-			flyGet();
-			gotFly = true;
-		}
-	}
+	myBunny->draw();
+	monsterBunny->draw();
 }
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
-		if (key == 'a') {
-			if (frogPosX > 0) {
-				left = 0.3;
-			} else {
-				left = 0;
-			}
-		}
 
-		if (key == 'd') {
-			if (frogPosX < 550) {
-				right = 0.3;
-			}
-		}
-
-		if (key == 's') {
-			down = 0.3;
-		}
-
-		if (key == 'w') {
-			up = 0.3;
-		}
 }
 
 //--------------------------------------------------------------
 void ofApp::keyReleased(int key){
-	if (key == 'a') {
-		left = 0;
-	}
 
-	if (key == 'd') {
-		right = 0;
-	}
-
-	if (key == 's') {
-		down = 0;
-	}
-
-	if (key == 'w') {
-		up = 0;
-	}
-}
-
-//--------------------------------------------------------------
-void ofApp::flyGet() {
-	flyHere = false;
-	collect.play();
 }
 
 //--------------------------------------------------------------
