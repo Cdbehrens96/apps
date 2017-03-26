@@ -22,12 +22,25 @@ public:
 	bool hitD = false;
 	bool hitF = false;
 
+	bool hitQ = false;
+	bool hitW = false;
+	bool hitE = false;
+	bool hitR = false;
+
 	ofImage phone;
+	ofImage redCrosses;
 	ofImage flash1;
 	ofImage flash2;
 
 	ofImage kerm1;
 	ofImage dotLights;
+	ofImage yellowDashes;
+	ofImage whiteCrossBlips;
+
+	ofImage nick;
+	ofImage tea;
+	ofImage omg;
+	ofImage heart;
 
 	uint64_t time;
 

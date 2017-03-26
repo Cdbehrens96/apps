@@ -6,11 +6,19 @@ whiteFlash::whiteFlash() {
 
 void whiteFlash::setup() {
 	phone.loadImage("LL.jpg");
+	redCrosses.loadImage("redCrosses.png");
 	flash1.loadImage("flash1.png");
 	flash2.loadImage("flash2.png");
 
 	kerm1.loadImage("kerm1.png");
 	dotLights.loadImage("dotLights.png");
+	yellowDashes.loadImage("yellowDash.png");
+	whiteCrossBlips.loadImage("whiteCrossBlips.png");
+
+	nick.loadImage("nick.png");
+	tea.loadImage("tea.png");
+	omg.loadImage("omg.png");
+	heart.loadImage("heart.png");
 
 	hitZ = false;
 	hitX = false;
@@ -20,7 +28,12 @@ void whiteFlash::setup() {
 	hitA = false;
 	hitS = false;
 	hitD = false;
-	hitF = false;	
+	hitF = false;
+
+	hitQ = false;
+	hitW = false;
+	hitE = false;
+	hitR = false;
 }
 
 void whiteFlash::update() {
@@ -32,6 +45,7 @@ void whiteFlash::update() {
 
 	if (hitX == true) {
 		if (ofGetElapsedTimeMillis() >= time + 150) {
+			ofSetColor(255, 0, 0, 125);
 			hitX = false;
 		}
 	}
@@ -61,6 +75,44 @@ void whiteFlash::update() {
 			hitS = false;
 		}
 	}
+
+	if (hitD == true) {
+		if (ofGetElapsedTimeMillis() >= time + 150) {
+			hitD = false;
+		}
+	}
+
+	if (hitF == true) {
+		if (ofGetElapsedTimeMillis() >= time + 150) {
+			hitF = false;
+		}
+	}
+
+	//----------------------------------------
+
+	if (hitQ == true) {
+		if (ofGetElapsedTimeMillis() >= time + 150) {
+			hitQ = false;
+		}
+	}
+
+	if (hitW == true) {
+		if (ofGetElapsedTimeMillis() >= time + 150) {
+			hitW = false;
+		}
+	}
+
+	if (hitE == true) {
+		if (ofGetElapsedTimeMillis() >= time + 150) {
+			hitE = false;
+		}
+	}
+
+	if (hitR == true) {
+		if (ofGetElapsedTimeMillis() >= time + 150) {
+			hitR = false;
+		}
+	}
 }
 
 
@@ -71,8 +123,8 @@ void whiteFlash::draw() {
 	}
 
 	if (hitX == true) {
-		ofSetColor(255, 0, 0, 125);
-		ofRect(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
+		ofSetColor(255, 0, 0);
+		redCrosses.draw(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
 	}
 
 	if (hitC == true) {
@@ -95,6 +147,40 @@ void whiteFlash::draw() {
 	if (hitS == true) {
 		ofSetColor(255);
 		dotLights.draw(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
+		ofSetColor(255, 255, 0);
+	}
+
+	if (hitD == true) {
+		ofSetColor(255);
+		yellowDashes.draw(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
+	}
+
+	if (hitF == true) {
+		ofSetColor(255);
+		whiteCrossBlips.draw(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
+	}
+
+	//----------------------------------------
+
+	if (hitQ == true) {
+		ofSetColor(255);
+		nick.draw(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
+		ofSetColor(0, 255, 255);
+	}
+
+	if (hitW == true) {
+		ofSetColor(255);
+		tea.draw(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
+	}
+
+	if (hitE == true) {
+		ofSetColor(255);
+		omg.draw(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
+	}
+
+	if (hitR == true) {
+		ofSetColor(255);
+		heart.draw(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
 	}
 }
 
@@ -128,6 +214,38 @@ void whiteFlash::_keyPressed(int _key) {
 
 	if (_key == 's') {
 		hitS = true;
+		time = ofGetElapsedTimeMillis();
+	}
+
+	if (_key == 'd') {
+		hitD = true;
+		time = ofGetElapsedTimeMillis();
+	}
+
+	if (_key == 'f') {
+		hitF = true;
+		time = ofGetElapsedTimeMillis();
+	}
+
+	//----------------------------------------
+
+	if (_key == 'q') {
+		hitQ = true;
+		time = ofGetElapsedTimeMillis();
+	}
+
+	if (_key == 'w') {
+		hitW = true;
+		time = ofGetElapsedTimeMillis();
+	}
+
+	if (_key == 'e') {
+		hitE = true;
+		time = ofGetElapsedTimeMillis();
+	}
+
+	if (_key == 'r') {
+		hitR = true;
 		time = ofGetElapsedTimeMillis();
 	}
 }
