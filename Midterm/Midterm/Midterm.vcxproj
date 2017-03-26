@@ -179,12 +179,14 @@ C:\Users\Conor\OneDrive\Documents\openFrameworks\addons\ofxThreadedVideo\libs\of
     <ClCompile Include="src\ofApp.cpp" />
     <ClCompile Include="src\particle.cpp" />
     <ClCompile Include="src\particleSystem.cpp" />
+    <ClCompile Include="src\soundController.cpp" />
     <ClCompile Include="src\whiteFlash.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ofApp.h" />
     <ClInclude Include="src\particle.h" />
     <ClInclude Include="src\particleSystem.h" />
+    <ClInclude Include="src\soundController.h" />
     <ClInclude Include="src\whiteFlash.h" />
   </ItemGroup>
   <ItemGroup>

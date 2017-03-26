@@ -117,10 +117,6 @@ void whiteFlash::update() {
 
 
 void whiteFlash::draw() {
-	if (hitZ == true) {
-		ofSetColor(255);
-		ofRect(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
-	}
 
 	if (hitX == true) {
 		ofSetColor(255, 0, 0);
@@ -181,6 +177,13 @@ void whiteFlash::draw() {
 	if (hitR == true) {
 		ofSetColor(255);
 		heart.draw(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
+	}
+
+	//----------------------------------------
+
+	if (hitZ == true) {
+		ofSetColor(255);
+		ofRect(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
 	}
 }
 

@@ -16,6 +16,9 @@
     <ClCompile Include="src\whiteFlash.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\soundController.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -36,6 +39,9 @@
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="src\whiteFlash.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\soundController.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>

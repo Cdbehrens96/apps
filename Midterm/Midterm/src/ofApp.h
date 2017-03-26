@@ -3,6 +3,7 @@
  //#define OF_VIDEO_PLAYER_QUICKTIME
 #include "ofMain.h"
 #include "whiteFlash.h"
+#include "soundController.h"
 
 class ofApp : public ofBaseApp {
 
@@ -32,6 +33,8 @@ public:
 	ofVec2f gravity;
 
 	whiteFlash myFlash;
+
+	soundController mySounds;
 
 	ofVideoPlayer video;
 

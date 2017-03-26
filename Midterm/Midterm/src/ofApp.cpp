@@ -4,6 +4,7 @@
 void ofApp::setup() {
 	ofBackground(0);
 	myFlash.setup();
+	mySounds.setup();
 	video.loadMovie("Cosa fa un Cavallo ad Halloween.mp4");
 	video.play();
 }
@@ -11,6 +12,7 @@ void ofApp::setup() {
 //--------------------------------------------------------------
 void ofApp::update() {
 	video.update();
+	mySounds.update();
 	myFlash.update();
 }
 
@@ -18,11 +20,14 @@ void ofApp::update() {
 void ofApp::draw() {
 	video.draw(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
 	myFlash.draw();
+	mySounds.draw();
 }
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key) {
 	myFlash._keyPressed(key);
+	mySounds.__keyPressed(key);
+
 }
 
 //--------------------------------------------------------------

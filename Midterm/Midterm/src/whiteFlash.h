@@ -8,7 +8,6 @@ public:
 	void update();
 	void draw();
 	void _keyPressed(int _key);
-	void flash2load();
 
 	whiteFlash();
 
