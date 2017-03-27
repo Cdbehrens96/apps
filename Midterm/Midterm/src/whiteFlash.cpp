@@ -5,12 +5,11 @@ whiteFlash::whiteFlash() {
 }
 
 void whiteFlash::setup() {
-	phone.loadImage("LL.jpg");
 	redCrosses.loadImage("redCrosses.png");
 	flash1.loadImage("flash1.png");
 	flash2.loadImage("flash2.png");
 
-	kerm1.loadImage("kerm1.png");
+	whiteBumps.loadImage("whiteBumps.png");
 	dotLights.loadImage("dotLights.png");
 	yellowDashes.loadImage("yellowDash.png");
 	whiteCrossBlips.loadImage("whiteCrossBlips.png");
@@ -19,6 +18,25 @@ void whiteFlash::setup() {
 	tea.loadImage("tea.png");
 	omg.loadImage("omg.png");
 	heart.loadImage("heart.png");
+
+	phone.loadImage("LL.jpg");
+	kerm1.loadImage("kerm1.png");
+	squidRave.loadImage("squidRave.png");
+
+	shell1.load("shell1.png");
+	shell2.load("shell2.png");
+	shell3.load("shell3.png");
+	shell4.load("shell4.png");
+	shell5.load("shell5.png");
+	shell8.load("shell8.png");
+	shell9.load("shell9.png");
+	shell10.load("shell10.png");
+	shell11.load("shell11.png");
+	shell12.load("shell12.png");
+	shell13.load("shell13.png");
+	shell14.load("shell14.png");
+	shell15.load("shell15.png");
+	shell16.load("shell16.png");
 
 	hitZ = false;
 	hitX = false;
@@ -34,6 +52,23 @@ void whiteFlash::setup() {
 	hitW = false;
 	hitE = false;
 	hitR = false;
+
+	hitB = false;
+	hitN = false;
+	hitM = false;
+
+	hitG = false;
+	hitH = false;
+	hitJ = false;
+	hitK = false;
+	hitL = false;
+
+	hitT = false;
+	hitY = false;
+	hitU = false;
+	hitI = false;
+	hitO = false;
+	hitP = false;
 }
 
 void whiteFlash::update() {
@@ -113,6 +148,96 @@ void whiteFlash::update() {
 			hitR = false;
 		}
 	}
+
+	//----------------------------------------
+
+	if (hitB == true) {
+		if (ofGetElapsedTimeMillis() >= time + 200) {
+			hitB = false;
+		}
+	}
+
+	if (hitN == true) {
+		if (ofGetElapsedTimeMillis() >= time + 200) {
+			hitN = false;
+		}
+	}
+
+	if (hitM == true) {
+		if (ofGetElapsedTimeMillis() >= time + 200) {
+			hitM = false;
+		}
+	}
+
+	//----------------------------------------
+
+	if (hitG == true) {
+		if (ofGetElapsedTimeMillis() >= time + 200) {
+			hitG = false;
+		}
+	}
+
+	if (hitH == true) {
+		if (ofGetElapsedTimeMillis() >= time + 200) {
+			hitH = false;
+		}
+	}
+
+	if (hitJ == true) {
+		if (ofGetElapsedTimeMillis() >= time + 200) {
+			hitJ = false;
+		}
+	}
+
+	if (hitK == true) {
+		if (ofGetElapsedTimeMillis() >= time + 200) {
+			hitK = false;
+		}
+	}
+
+	if (hitL == true) {
+		if (ofGetElapsedTimeMillis() >= time + 200) {
+			hitL = false;
+		}
+	}
+
+	//----------------------------------------
+
+	if (hitT == true) {
+		if (ofGetElapsedTimeMillis() >= time + 200) {
+			hitT = false;
+		}
+	}
+
+	if (hitY == true) {
+		if (ofGetElapsedTimeMillis() >= time + 200) {
+			hitY = false;
+		}
+	}
+
+	if (hitU == true) {
+		if (ofGetElapsedTimeMillis() >= time + 200) {
+			hitU = false;
+		}
+	}
+
+	if (hitI == true) {
+		if (ofGetElapsedTimeMillis() >= time + 200) {
+			hitI = false;
+		}
+	}
+
+	if (hitO == true) {
+		if (ofGetElapsedTimeMillis() >= time + 200) {
+			hitO = false;
+		}
+	}
+
+	if (hitP == true) {
+		if (ofGetElapsedTimeMillis() >= time + 200) {
+			hitP = false;
+		}
+	}
 }
 
 
@@ -130,14 +255,14 @@ void whiteFlash::draw() {
 
 	if (hitV == true) {
 		ofSetColor(0, 0, 255, 125);
-		flash2.draw(-100, 50, ofGetWindowWidth(), ofGetWindowHeight());
+		whiteBumps.draw(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
 	}
 
 	//----------------------------------------
 
 	if (hitA == true) {
-		ofSetColor(255, 255, 255, 95);
-		kerm1.draw(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
+		ofSetColor(255);
+		flash2.draw(-100, 50, ofGetWindowWidth(), ofGetWindowHeight());
 	}
 
 	if (hitS == true) {
@@ -184,6 +309,72 @@ void whiteFlash::draw() {
 	if (hitZ == true) {
 		ofSetColor(255);
 		ofRect(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
+	}
+
+
+
+	if (hitB == true) {
+		shell1.draw(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
+	}
+
+	if (hitN == true) {
+		kerm1.draw(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
+	}
+
+	if (hitM == true) {
+		shell3.draw(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
+	}
+
+	//----------------------------------------
+
+	if (hitG == true) {
+		phone.draw((ofGetWindowWidth() / 2) - 250, (ofGetWindowHeight() / 2) - 384);
+	}
+
+	if (hitH == true) {
+		//shell5.draw(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
+		ofSetColor(0);
+		ofRect(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
+		ofSetColor(255);
+	}
+
+	if (hitJ == true) {
+		shell8.draw(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
+	}
+
+	if (hitK == true) {
+		squidRave.draw(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
+	}
+
+	if (hitL == true) {
+		shell10.draw(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
+		ofSetColor(125);
+	}
+
+	//----------------------------------------
+
+	if (hitT == true) {
+		shell11.draw(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
+	}
+
+	if (hitY == true) {
+		shell12.draw(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
+	}
+
+	if (hitU == true) {
+		shell13.draw(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
+	}
+
+	if (hitI == true) {
+		shell14.draw(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
+	}
+
+	if (hitO == true) {
+		shell15.draw(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
+	}
+
+	if (hitP == true) {
+		shell16.draw(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
 	}
 }
 
@@ -249,6 +440,83 @@ void whiteFlash::_keyPressed(int _key) {
 
 	if (_key == 'r') {
 		hitR = true;
+		time = ofGetElapsedTimeMillis();
+	}
+
+	//----------------------------------------
+
+	if (_key == 'b') {
+		hitB = true;
+		time = ofGetElapsedTimeMillis();
+	}
+
+	if (_key == 'n') {
+		hitN = true;
+		time = ofGetElapsedTimeMillis();
+	}
+
+	if (_key == 'm') {
+		hitM = true;
+		time = ofGetElapsedTimeMillis();
+	}
+
+
+	//----------------------------------------
+
+	if (_key == 'g') {
+		hitG = true;
+		time = ofGetElapsedTimeMillis();
+	}
+
+	if (_key == 'h') {
+		hitH = true;
+		time = ofGetElapsedTimeMillis();
+	}
+
+	if (_key == 'j') {
+		hitJ = true;
+		time = ofGetElapsedTimeMillis();
+	}
+
+	if (_key == 'k') {
+		hitK = true;
+		time = ofGetElapsedTimeMillis();
+	}
+
+	if (_key == 'l') {
+		hitL = true;
+		time = ofGetElapsedTimeMillis();
+	}
+
+	//----------------------------------------
+
+	if (_key == 't') {
+		hitT = true;
+		time = ofGetElapsedTimeMillis();
+	}
+
+	if (_key == 'y') {
+		hitY = true;
+		time = ofGetElapsedTimeMillis();
+	}
+
+	if (_key == 'u') {
+		hitU = true;
+		time = ofGetElapsedTimeMillis();
+	}
+
+	if (_key == 'i') {
+		hitI = true;
+		time = ofGetElapsedTimeMillis();
+	}
+
+	if (_key == 'o') {
+		hitO = true;
+		time = ofGetElapsedTimeMillis();
+	}
+
+	if (_key == 'p') {
+		hitP = true;
 		time = ofGetElapsedTimeMillis();
 	}
 }

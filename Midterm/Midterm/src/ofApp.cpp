@@ -5,8 +5,10 @@ void ofApp::setup() {
 	ofBackground(0);
 	myFlash.setup();
 	mySounds.setup();
-	video.loadMovie("Cosa fa un Cavallo ad Halloween.mp4");
-	video.play();
+	video.loadMovie("liveSet2small.mov");
+	//video.play();
+
+	movieStart = false;
 }
 
 //--------------------------------------------------------------
@@ -27,7 +29,7 @@ void ofApp::draw() {
 void ofApp::keyPressed(int key) {
 	myFlash._keyPressed(key);
 	mySounds.__keyPressed(key);
-
+	if (key == 'z') video.play();
 }
 
 //--------------------------------------------------------------

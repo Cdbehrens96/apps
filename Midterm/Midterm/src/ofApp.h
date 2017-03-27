@@ -25,6 +25,7 @@ public:
 	void gotMessage(ofMessage msg);
 
 	bool _hit = false;
+	bool movieStart = false;
 
 	vector<float> myFloats;
 

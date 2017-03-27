@@ -13,8 +13,8 @@ void soundController::setup() {
 	hes1.load("hes1.wav");
 	hes2.load("hes2.wav");
 	ur.load("ur.wav");
-	im2.load("im1.wav");
 	im1.load("im1.wav");
+	krabs.load("krabs.wav");
 
 	ball.load("ball.wav");
 	close.load("close.wav");
@@ -23,245 +23,158 @@ void soundController::setup() {
 	ready.load("ready.wav");
 	go.load("go.wav");
 
-	phone.loadImage("LL.jpg");
+	fullVol = true;
+	halfVol = false;
+	noVol = false;
 
-	horn1.setVolume(5.0);
-
-	hitB = false;
-	hitN = false;
-	hitM = false;
-
-	hitG = false;
-	hitH = false;
-	hitJ = false;
-	hitK = false;
-	hitL = false;
-
-	hitT = false;
-	hitY = false;
-	hitU = false;
-	hitI = false;
-	hitO = false;
-	hitP = false;
+	
 }
 
 void soundController::update() {
-	if (hitB == true) {
-		if (ofGetElapsedTimeMillis() >= time + 150) {
-			hitB = false;
-		}
+	if (fullVol == true) {
+		horn1.setVolume(1.0);
+		horn2.setVolume(1.0);
+		save.setVolume(1.0);
+
+		hes1.setVolume(1.0);
+		hes2.setVolume(1.0);
+		ur.setVolume(1.0);
+		im1.setVolume(1.0);
+		krabs.setVolume(0.6);
+
+		ball.setVolume(1.0);
+		close.setVolume(1.0);
+		pressA.setVolume(1.0);
+		poison.setVolume(1.0);
+		ready.setVolume(1.0);
+		go.setVolume(1.0);
 	}
 
-	if (hitN == true) {
-		if (ofGetElapsedTimeMillis() >= time + 150) {
-			hitN = false;
-		}
+	if (halfVol == true) {
+		horn1.setVolume(0.5);
+		horn2.setVolume(0.5);
+		save.setVolume(0.5);
+
+		hes1.setVolume(0.5);
+		hes2.setVolume(0.5);
+		ur.setVolume(0.5);
+		im1.setVolume(0.5);
+		krabs.setVolume(0.3);
+
+		ball.setVolume(0.5);
+		close.setVolume(0.5);
+		pressA.setVolume(0.5);
+		poison.setVolume(0.5);
+		ready.setVolume(0.5);
+		go.setVolume(0.5);
 	}
 
-	if (hitM == true) {
-		if (ofGetElapsedTimeMillis() >= time + 150) {
-			hitM = false;
-		}
-	}
+	if (noVol == true) {
+		horn1.setVolume(0.0);
+		horn2.setVolume(0.0);
+		save.setVolume(0.0);
 
-	//----------------------------------------
+		hes1.setVolume(0.0);
+		hes2.setVolume(0.0);
+		ur.setVolume(0.0);
+		im1.setVolume(0.0);
+		krabs.setVolume(0.0);
 
-	if (hitG == true) {
-		if (ofGetElapsedTimeMillis() >= time + 150) {
-			hitG = false;
-		}
-	}
-
-	if (hitH == true) {
-		if (ofGetElapsedTimeMillis() >= time + 150) {
-			hitH = false;
-		}
-	}
-
-	if (hitJ == true) {
-		if (ofGetElapsedTimeMillis() >= time + 150) {
-			hitJ = false;
-		}
-	}
-
-	if (hitK == true) {
-		if (ofGetElapsedTimeMillis() >= time + 150) {
-			hitK = false;
-		}
-	}
-
-	if (hitL == true) {
-		if (ofGetElapsedTimeMillis() >= time + 150) {
-			hitL = false;
-		}
-	}
-
-	//----------------------------------------
-
-	if (hitT == true) {
-		if (ofGetElapsedTimeMillis() >= time + 150) {
-			hitT = false;
-		}
-	}
-
-	if (hitY == true) {
-		if (ofGetElapsedTimeMillis() >= time + 150) {
-			hitY = false;
-		}
-	}
-
-	if (hitU == true) {
-		if (ofGetElapsedTimeMillis() >= time + 150) {
-			hitU = false;
-		}
-	}
-
-	if (hitI == true) {
-		if (ofGetElapsedTimeMillis() >= time + 150) {
-			hitI = false;
-		}
-	}
-
-	if (hitO == true) {
-		if (ofGetElapsedTimeMillis() >= time + 150) {
-			hitO = false;
-		}
-	}
-
-	if (hitP == true) {
-		if (ofGetElapsedTimeMillis() >= time + 150) {
-			hitP = false;
-		}
+		ball.setVolume(0.0);
+		close.setVolume(0.0);
+		pressA.setVolume(0.0);
+		poison.setVolume(0.0);
+		ready.setVolume(0.0);
+		go.setVolume(0.0);
 	}
 }
 
 
 void soundController::draw() {
 
-	if (hitB == true) {
-		horn1.play();
-	}
-
-	if (hitN == true) {
-		horn2.play();
-	}
-
-	if (hitM == true) {
-		save.play();
-	}
-
-	//----------------------------------------
-
-	if (hitG == true) {
-	}
-
-	if (hitH == true) {
-	}
-
-	if (hitJ == true) {
-	}
-
-	if (hitK == true) {
-	}
-
-	if (hitL == true) {
-	}
-
-	//----------------------------------------
-
-	if (hitT == true) {
-	}
-
-	if (hitY == true) {
-	}
-
-	if (hitU == true) {
-	}
-
-	if (hitI == true) {
-	}
-
-	if (hitO == true) {
-	}
-
-	if (hitP == true) {
-	}
+	
 
 }
 
 void soundController::__keyPressed(int __key) {
 	if (__key == 'b') {
-		hitB = true;
-		time = ofGetElapsedTimeMillis();
+		horn1.play();
 	}
 
 	if (__key == 'n') {
-		hitN = true;
-		time = ofGetElapsedTimeMillis();
+		horn2.play();
 	}
 
 	if (__key == 'm') {
-		hitM = true;
-		time = ofGetElapsedTimeMillis();
+		save.play();
 	}
 
 
 	//----------------------------------------
 
 	if (__key == 'g') {
-		hitG = true;
-		time = ofGetElapsedTimeMillis();
+		hes1.play();
 	}
 
 	if (__key == 'h') {
-		hitH = true;
-		time = ofGetElapsedTimeMillis();
+		hes2.play();
 	}
 
 	if (__key == 'j') {
-		hitJ = true;
-		time = ofGetElapsedTimeMillis();
+		ur.play();
 	}
 
 	if (__key == 'k') {
-		hitK = true;
-		time = ofGetElapsedTimeMillis();
+		im1.play();
 	}
 
 	if (__key == 'l') {
-		hitL = true;
-		time = ofGetElapsedTimeMillis();
+		krabs.play();
 	}
 
 	//----------------------------------------
 
 	if (__key == 't') {
-		hitT = true;
-		time = ofGetElapsedTimeMillis();
+		ball.play();
 	}
 
 	if (__key == 'y') {
-		hitY = true;
-		time = ofGetElapsedTimeMillis();
+		close.play();
 	}
 
 	if (__key == 'u') {
-		hitU = true;
-		time = ofGetElapsedTimeMillis();
+		pressA.play();
 	}
 
 	if (__key == 'i') {
-		hitI = true;
-		time = ofGetElapsedTimeMillis();
+		poison.play();
 	}
 
 	if (__key == 'o') {
-		hitO = true;
-		time = ofGetElapsedTimeMillis();
+		ready.play();
 	}
 
 	if (__key == 'p') {
-		hitP = true;
-		time = ofGetElapsedTimeMillis();
+		go.play();
+	}
+
+	//----------------------------------------
+
+	if (__key == '1') {
+		noVol = true;
+		halfVol = false;
+		fullVol = false;
+	}
+
+	if (__key == '2') {
+		noVol = false;
+		halfVol = true;
+		fullVol = false;
+	}
+
+	if (__key == '3') {
+		noVol = false;
+		halfVol = false;
+		fullVol = true;
 	}
 }
