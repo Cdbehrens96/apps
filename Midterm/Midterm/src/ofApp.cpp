@@ -5,7 +5,7 @@ void ofApp::setup() {
 	ofBackground(0);
 	myFlash.setup();
 	mySounds.setup();
-	video.loadMovie("liveSet2small.mov");
+	video.loadMovie("liveSet2.mov");
 	//video.play();
 
 	movieStart = false;
@@ -20,7 +20,9 @@ void ofApp::update() {
 
 //--------------------------------------------------------------
 void ofApp::draw() {
-	video.draw(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
+	//video.setAnchorPoint(ofGetWindowWidth()/2, ofGetWindowHeight() / 2);
+	//video.draw(ofGetWindowWidth()/2, ofGetWindowHeight() / 2, 1024, 768);
+	video.draw(240, 0, 1440, 1080);
 	myFlash.draw();
 	mySounds.draw();
 }
